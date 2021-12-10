@@ -19,7 +19,6 @@ CMouse.__index = game.Players.LocalPlayer:GetMouse()
 
 warn'Neptune/Neptunian V'
 warn[[Absolutely.
-
 Created by NoobyGames12
 ----------------------------]]
 
@@ -6973,6 +6972,9 @@ imgc2.Size = UDim2.new(2,0,2,0)
 imgc2.ImageColor3 = Color3.new(0.5,0,1)
 for i = 0, 10, 0.1 do
 		swait()
+if NullwareAPI then
+	NullwareFling(Part381, 100/60)
+end
 imgc.ImageTransparency = imgc.ImageTransparency - 0.01
 imgc.Rotation = imgc.Rotation + 1
 imgc2.ImageTransparency = imgc2.ImageTransparency - 0.01
@@ -7005,6 +7007,9 @@ end
 CFuncs["Sound"].Create("rbxassetid://430315987", root, 1.5, 1)
 CFuncs["Sound"].Create("rbxassetid://1295446488", root, 3, 1)
 for x = 0, 14 do
+if NullwareAPI then
+	NullwareFling(Part381, 0.5)
+end
 CFuncs["Sound"].Create("rbxassetid://200633281", rarmor, 1, 1.05)
 CFuncs["Sound"].Create("rbxassetid://161006195", rarmor, 1.5, 1.025)
 MagniDamage(tors, 10, 60,85, 0, "Normal",153092213)
@@ -7107,6 +7112,9 @@ break
 end
 end
 end))
+if NullwareAPI then
+	NullwareFling((larm.CFrame*CFrame.new(0,1.5,0)).p, 100/60)
+end
 for i = 0, 10, 0.1 do
 swait()
 slash(math.random(50,100)/10,5,true,"Round","Add","Out",root.CFrame*CFrame.new(0,-3,0)*CFrame.Angles(math.rad(math.random(-5,5)),math.rad(math.random(-360,360)),math.rad(math.random(-5,5))),vt(0.05,0.01,0.05),math.random(25,50)/250,BrickColor.new("White"))
@@ -7161,6 +7169,9 @@ local distance = (orb.CFrame.p - position).magnitude
 a.Size = Vector3.new(0.1, 0.1, 0.1)
 a.CFrame = CFrame.new(orb.CFrame.p, position) * CFrame.new(0, 0, 0)
 orb.CFrame = a.CFrame
+if NullwareAPI then
+	NullwareFling(orb, 80/60)
+end
 for i = 0, 8, 0.1 do
 swait()
 sphere2(5,"Add",orb.CFrame*CFrame.new(math.random(-20,20),math.random(-20,20),math.random(-20,20)),vt(1,1,1),0.01,0.01,0.01,BrickColor.new("Royal purple"),BrickColor.new("Royal purple").Color)
@@ -7207,6 +7218,9 @@ orb.Touched:connect(function(hit)
 if hitted == false and hit.Parent ~= char then
 hitted = true
 MagniDamage(orb, 30, 72,95, 0, "Normal",153092213)
+if NullwareAPI then
+	NullwareFling(orb, 1)
+end
 CFuncs["Sound"].Create("rbxassetid://763717897", orb, 10, 1)
 CFuncs["Sound"].Create("rbxassetid://1295446488", orb, 9, 0.75)
 for i = 0, 24 do
@@ -7255,6 +7269,9 @@ hum.JumpPower = 0
 CFuncs["Sound"].Create("rbxassetid://1368598393", rarmor, 2, 1)
 CFuncs["Sound"].Create("rbxassetid://1368583274", rarmor, 2.5, 1)
 for x = 0, 9 do
+if NullwareAPI then
+	NullwareFling(Part381, 0.5)
+end
 slash(5,5,true,"Round","Add","Out",rarmor.CFrame*CFrame.new(0,0,0)*CFrame.Angles(0,0,0),vt(0.05,0.01,0.05),0.05,BrickColor.new("White"))
 CFuncs["Sound"].Create("rbxassetid://200633108", rarmor, 2, 1.05)
 CFuncs["Sound"].Create("rbxassetid://234365573", rarmor, 2.5, 1.025)
@@ -7339,6 +7356,9 @@ CFuncs["Sound"].Create("rbxassetid://782353443", rarmor, 6, 1)
 --CFuncs["Sound"].Create("rbxassetid://1548538202", rarmor, 4,1)
 for i = 0, 2, 0.1 do
 		swait()
+if NullwareAPI then
+	NullwareFling(Part381, 20/60)
+end
 MagniDamage(hitb, 8, 92,158, 0, "Normal",153092213)
 hum.CameraOffset = vt(math.random(-10,10)/25,math.random(-10,10)/25,math.random(-10,10)/25)
 	RH.C0=clerp(RH.C0,cf(1,-1,0)*angles(math.rad(0),math.rad(90),math.rad(0))*angles(math.rad(-3),math.rad(-20),math.rad(-10)),.9)
@@ -7463,12 +7483,21 @@ mouse.Button1Down:connect(function()
 if equipped == true then
   if attack == false and attacktype == 1 then
     attacktype = 2
+	if NullwareAPI then
+	NullwareFling(Part381, 0.5)
+	end
     attackone()
   elseif attack == false and attacktype == 2 then
     attacktype = 3
+	if NullwareAPI then
+	NullwareFling(Part381, 0.5)
+	end
     attacktwo()
   elseif attack == false and attacktype == 3 then
     attacktype = 1
+	if NullwareAPI then
+	NullwareFling(Part381, 0.75)
+	end
     attackthree()
   --[[elseif attack == false and attacktype == 4 then
     attacktype = 1
