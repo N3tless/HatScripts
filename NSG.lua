@@ -5620,8 +5620,8 @@ function thingthing()
 		local ocf = RootPart.CFrame
 		hum.WalkSpeed = 0 
 		hum.JumpPower = 0 
-		hed.Anchored = true
-		RootPart.Anchored = true
+		hed.Anchored = false
+		RootPart.Anchored = false
 		Humanoid.WalkSpeed = 0 
 		Humanoid.JumpPower = 0
 		RootPart.CFrame = hed.CFrame*cf(0,0,1.35)
@@ -5674,7 +5674,7 @@ function thingthing()
 				RW.C0=clerp(RW.C0,cf(1.5,0.5,0)*angles(math.rad(-75),0,0),.4)
 				LW.C0=clerp(LW.C0,cf(-1.5,0.5,0)*angles(math.rad(-75),0,0),.4)
 			end
-		until stopitlol and times >= 3
+		until stopitlol and times >= 10
 		for i = 1, 3 do
 			for i = 0, 1.5, .05 do
 				RootPart.CFrame = hed.CFrame*cf(0,0,1.35)
@@ -5691,7 +5691,7 @@ function thingthing()
 			CFuncs["Sound"].Create("rbxassetid://1430568042", Torso, 10,.75)
 			
 
-			coroutine.resume(coroutine.create(function()
+			--[[coroutine.resume(coroutine.create(function()
 			bld = Instance.new("ParticleEmitter",whom:WaitForChild("Torso"))
 			bld.LightEmission = 0.1
 			bld.Texture = "rbxassetid://284205403"
@@ -5726,7 +5726,7 @@ function thingthing()
 			bld.RotSpeed = NumberRange.new(-500,500)
 			bld.Enabled = false
 			bld:Emit(250)
-			end))
+			end))]]
 			for i = 0, 1.5, .05 do
 				RootPart.CFrame = hed.CFrame*cf(0,0,1.35)
 				swait()
@@ -5753,7 +5753,7 @@ function thingthing()
 			CFuncs["Sound"].Create("rbxassetid://1430568042", Torso, 10,.75)
 			
 			dmg(whom)
-			coroutine.resume(coroutine.create(function()
+			--[[coroutine.resume(coroutine.create(function()
 			bld = Instance.new("ParticleEmitter",whom:WaitForChild("Torso"))
 			bld.LightEmission = 0.1
 			bld.Texture = "rbxassetid://284205403"
@@ -5769,8 +5769,8 @@ function thingthing()
 			bld.Rotation = NumberRange.new(-500,500)
 			bld.RotSpeed = NumberRange.new(-500,500)
 			bld.Enabled = true
-			end))
-			coroutine.resume(coroutine.create(function()
+			end))]]
+			--[[coroutine.resume(coroutine.create(function()
 			bld = Instance.new("ParticleEmitter",whom:WaitForChild("LowerTorso"))
 			bld.LightEmission = 0.1
 			bld.Texture = "rbxassetid://284205403"
@@ -5786,7 +5786,7 @@ function thingthing()
 			bld.Rotation = NumberRange.new(-500,500)
 			bld.RotSpeed = NumberRange.new(-500,500)
 			bld.Enabled = true
-			end))
+			end))]]
 			for i = 0, 3, .05 do
 				RootPart.CFrame = hed.CFrame*cf(0,0,1.35)
 				swait()
