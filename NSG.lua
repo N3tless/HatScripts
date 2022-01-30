@@ -5363,15 +5363,21 @@ local attacktype = 1
 mouse.Button1Down:connect(function()
   if attack == false and attacktype == 1 then
     attacktype = 2
+    if NullwareFling then
 	NullwareFling(char.Torso, 0.3)
+    end
     attackone()
   elseif attack == false and attacktype == 2 then
     attacktype = 3
-    NullwareFling(char.Torso, 0.3)
+    if NullwareFling then
+	NullwareFling(char.Torso, 0.3)
+    end
     attacktwo()
   elseif attack == false and attacktype == 3 then
     attacktype = 1
-    NullwareFling(char.Torso, 0.3)
+    if NullwareFling then
+	NullwareFling(char.Torso, 0.3)
+    end
     attackthree()
   elseif attack == false and attacktype == 4 then
     attacktype = 1
