@@ -10,33 +10,13 @@ weld.C1 = hat.Parent:FindFirstChild(hat.Handle:FindFirstChildWhichIsA("Attachmen
 return hat
 end
 
-	local AHB = Instance.new("BindableEvent")
-	
-	local FPS = 30
-	
-	local TimeFrame = 0
-	
-	local LastFrame = tick()
-	local Frame = 1/FPS
-	
-	game:service'RunService'.Heartbeat:connect(function(s,p)
-		TimeFrame = TimeFrame + s
-		if(TimeFrame >= Frame)then
-			for i = 1,math.floor(TimeFrame/Frame) do
-				AHB:Fire()
-			end
-			LastFrame=tick()
-			TimeFrame=TimeFrame-Frame*math.floor(TimeFrame/Frame)
-		end
-	end)
-
 
 	function swait(dur)
 		if(dur == 0 or typeof(dur) ~= 'number')then
-			AHB.Event:wait()
+			game.RunService.Stepped:wait()
 		else
 			for i = 1, dur*FPS do
-				AHB.Event:wait()
+				game.RunService.Stepped:wait()
 			end
 		end
 	end
@@ -123,38 +103,6 @@ local HITPLAYERSOUNDS = {--[["199149137", "199149186", "199149221", "199149235",
 
 
 
-ArtificialHB = Instance.new("BindableEvent", script)
-ArtificialHB.Name = "ArtificialHB"
-
-script:WaitForChild("ArtificialHB")
-
-frame = Frame_Speed
-tf = 0
-allowframeloss = false
-tossremainder = false
-lastframe = tick()
-script.ArtificialHB:Fire()
-
-game:GetService("RunService").Heartbeat:connect(function(s, p)
-	tf = tf + s
-	if tf >= frame then
-		if allowframeloss then
-			script.ArtificialHB:Fire()
-			lastframe = tick()
-		else
-			for i = 1, math.floor(tf / frame) do
-				script.ArtificialHB:Fire()
-			end
-		lastframe = tick()
-		end
-		if tossremainder then
-			tf = 0
-		else
-			tf = tf - frame * math.floor(tf / frame)
-		end
-	end
-end)
-
 
 function Raycast(POSITION, DIRECTION, RANGE, IGNOREDECENDANTS)
 	return workspace:FindPartOnRay(Ray.new(POSITION, DIRECTION.unit * RANGE), IGNOREDECENDANTS)
@@ -176,10 +124,10 @@ end
 
 function Swait(NUMBER)
 	if NUMBER == 0 or NUMBER == nil then
-		ArtificialHB.Event:wait()
+		game.RunService.Stepped:wait()
 	else
 		for i = 1, NUMBER do
-			ArtificialHB.Event:wait()
+			game.RunService.Stepped:wait()
 		end
 	end
 end
