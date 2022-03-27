@@ -15,7 +15,7 @@ end
 		if(dur == 0 or typeof(dur) ~= 'number')then
 			game.RunService.Stepped:wait()
 		else
-			for i = 1, dur*FPS do
+			for i = 1, dur*60 do
 				game.RunService.Stepped:wait()
 			end
 		end
